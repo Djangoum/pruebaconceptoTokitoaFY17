@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div layout="row" layout-align="space-around center">
+    <div ng-controller="loginController" class="wrapper">
+        <form class="form-signin">
+            <loading></loading>
+            <div layout="column" ng-show="ShowLoginForm">
+                <h2 class="form-signin-heading">{{ 'LOGINTITLE' | translate }}</h2>
+                <md-input-container>
+                    <input type="text" placeholder="{{ 'USERNAME' | translate }}" required="" autofocus="" ng-model="UserName" />
+                </md-input-container>
+                <md-input-container>
+                    <input type="password" placeholder="{{ 'PASSWORD' | translate }}" required="" ng-model="password" />
+                </md-input-container>
+                <br />
+                <label class="checkbox">
+                    <md-checkbox class="example-margin" name="rememberMe" [(ngModel)]="remember">{{ 'REMEMBER' | translate }}</md-checkbox>
+                </label>
+                <md-button md-raised-button class="md-raised" ng-click="LoginClick()">{{ 'LOGIN' | translate }}</md-button>
+                <span ng-bind="Message"></span>
+            </div>
+        </form>
+    </div>
+    <div ng-controller="registerController" class="wrapper RegisterForm">
+        @Html.Partial("PartialViews/RegistrationForm.cshtml")
+    </div>
+</div>

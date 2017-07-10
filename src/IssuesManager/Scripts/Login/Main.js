@@ -1,0 +1,1 @@
+﻿var App = angular.module("root", ["DataServices", 'pascalprecht.translate', 'loading', 'ngMaterial']);

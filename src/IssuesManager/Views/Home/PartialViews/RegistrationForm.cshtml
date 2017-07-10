@@ -1,0 +1,32 @@
+﻿<form class="form-signin">
+    <loading></loading>
+    <div layout="column" ng-show="ShowRegisterForm">
+        <h2 class="form-signin-heading">{{ 'REGISTER' | translate }}</h2>
+        <md-input-container class="md-icon-float">
+            <md-icon md-font-icon="fa fa-user"></md-icon>
+            <input type="text" name="name" id="name" required placeholder="{{ 'ENTERYOURNAME' | translate }}" ng-model="Name" />
+        </md-input-container>
+
+        <md-input-container class="md-icon-float">
+            <md-icon md-font-icon="fa fa-envelope"></md-icon>
+            <input type="text" name="email" id="email" required placeholder="{{ 'ENTERYOUREMAIL' | translate }}" ng-model="Email" />
+        </md-input-container>
+
+        <md-input-container class="md-icon-float">
+            <md-icon md-font-icon="fa fa-users"></md-icon>
+            <input type="text" class="form-control" required name="username" id="username" placeholder="{{ 'ENTERYOURUSERNAME' | translate }}" ng-model="UserName" />
+        </md-input-container>
+
+        <md-input-container class="md-icon-float">
+            <md-icon md-font-icon="fa fa-lock"></md-icon>
+            <input type="password" name="password" required id="password" placeholder="{{ 'ENTERYOURPASSWORD' | translate }}" ng-model="Password" />
+        </md-input-container>
+
+        <md-input-container class="md-icon-float">
+            <md-icon md-font-icon="fa fa-lock"></md-icon>
+            <input type="password" name="confirm" required id="confirm" placeholder="{{ 'RETYPEYOURPASSWORD' | translate }}" ng-model="RePassword" />
+        </md-input-container>
+        <md-button md-raised-button class="md-raised" type="button" ng-click="RegisterClick()">{{ 'REGISTER' | translate }}</md-button>
+    </div>
+    <span ng-class="{'text-danger' : LoginHasError(), 'text-success' : LoginHasSuccess()}" ng-bind="Message"></span>
+</form>
